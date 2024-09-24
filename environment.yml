@@ -1,4 +1,4 @@
-name: ai_engineering
+name: ai_inventiveness
 channels:
   - conda-forge
 dependencies:
