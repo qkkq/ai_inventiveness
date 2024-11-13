@@ -1,4 +1,4 @@
-name: ai_inv_py310
+name: ainv_py310
 channels:
   - conda-forge
 dependencies:

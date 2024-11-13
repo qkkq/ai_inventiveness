@@ -2,7 +2,7 @@
 # GLOBALS                                                                       #
 #################################################################################
 
-PROJECT_NAME = ai_inv_py310
+PROJECT_NAME = ainv_py310
 PYTHON_VERSION = 3.10
 PYTHON_INTERPRETER = python
 
