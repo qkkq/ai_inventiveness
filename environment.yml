@@ -12,6 +12,8 @@ dependencies:
   - ipykernel
   - matplotlib
   - notebook
+  - seaborn
+  - scikit-learn
   - pip:
     - python-dotenv
     - evaluate

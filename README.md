@@ -1,5 +1,7 @@
 # Artificial Inventiveness for Engineers
 
+![Background](/references/Background.png)
+
 This repository contains course materials for Artificial Inventiveness for engineers course (W10IME-SD0149L). 
 
 The 15-hour "Artificial Inventiveness for Engineers" course introduces doctoral students to innovative problem-solving techniques enhanced by AI. It combines lectures on systematic innovation methods, TRIZ fundamentals, and AI applications in inventive problem-solving with hands-on Python coding sessions. Through laboratory exercises, students develop practical skills in using large language models, information extraction, and AI-assisted concept development. This course aims to equip engineers with advanced problem-solving skills that blend traditional inventive methods with cutting-edge AI technologies. 
