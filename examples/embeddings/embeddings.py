@@ -3,42 +3,30 @@ This script shows how to use Word Embeddings to find relevant sentences.
 """
 import os
 import json
-import logging
 from typing import List
 from uuid import uuid4
 from dotenv import load_dotenv
 from tqdm import tqdm
 
-from service.embedding_service import EmbeddingService
-
-# Set up logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('embeddings.log'),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
+from src.service.embedding_service import EmbeddingService
 
 script_path = os.path.dirname(os.path.abspath(__file__))
 parameters_txt_path = os.path.join(script_path, "parameters.txt")
+parameters_json_path = os.path.join(script_path, "parameters.json")
 
 # Load the environment variables
 load_dotenv()
 
 # Define embedding service
 embedding_service = EmbeddingService(model="mxbai-embed-large:335m")
-logger.info("Initialized embedding service with model: mxbai-embed-large:335m")
 
 def embed_parameters(parameters: List[str]) -> dict:
     """
     Embed the TRIZ standard parameters.
     """
-    logger.info("Starting to embed %s parameters", len(parameters))
     output_list = []
-    for ind, parameter in tqdm(enumerate(parameters), desc="Embedding parameters"):
+    progress_bar = tqdm(enumerate(parameters), total=len(parameters), desc="Embedding parameters")
+    for ind, parameter in progress_bar:
         output_list.append(
             {
                 "uuid": str(uuid4()),
@@ -47,14 +35,12 @@ def embed_parameters(parameters: List[str]) -> dict:
                 "embedding": embedding_service.create_embedding(parameter),
             }
         )
-    logger.info("Finished embedding parameters")
     return output_list
 
 def search_parameters(query: str, parameters: List[dict], n: int = 3) -> List[dict]:
     """
     Search for the closest parameters.
     """
-    logger.info("Searching for %s closest parameters to query: %s", n, query)
     query_embedding = embedding_service.create_embedding(query)
     distances = embedding_service.find_n_closest(
         query_vector=query_embedding,
@@ -67,33 +53,42 @@ def main():
     """
     Main function.
     """
-    logger.info("Starting main function")
-    query = "Honeycomb panel used as a core material in the trailer's platform reduces vibrations."
+    query = input("Enter a query: ")
 
-    # Load the TRIZ standard parameters
-    try:
-        with open(parameters_txt_path, "r", encoding='utf-8') as file:
-            parameters_txt = [line.strip() for line in file.readlines()]
-        logger.info("Loaded %s parameters from file", len(parameters_txt))
-    except Exception as e: # pylint: disable=broad-except
-        logger.error("Failed to load parameters file: %s", e)
-        return
+    # Check if embeddings file exists
+    if os.path.exists(parameters_json_path):
+        print("Loading existing embeddings from JSON file...")
+        try:
+            with open(parameters_json_path, "r", encoding='utf-8') as file:
+                parameters = json.load(file)
+            print(f"Successfully loaded {len(parameters)} embeddings")
+        except Exception as e: # pylint: disable=broad-except
+            print(f"Failed to load existing embeddings: {e}")
+            return
+    else:
+        print("Embeddings file not found. Generating new embeddings...")
+        # Load the TRIZ standard parameters
+        try:
+            with open(parameters_txt_path, "r", encoding='utf-8') as file:
+                parameters_txt = [line.strip() for line in file.readlines()]
+            print(f"Successfully loaded {len(parameters_txt)} parameters from text file")
+        except Exception as e: # pylint: disable=broad-except
+            print(f"Failed to load parameters from text file: {e}")
+            return
 
-    # Prepare .json file with embeddings
-    try:
-        parameters = embed_parameters(parameters_txt)
-        with open("parameters.json", "w", encoding='utf-8') as file:
-            json.dump(parameters, file, indent=4)
-        logger.info("Successfully saved embeddings to parameters.json")
-    except Exception as e: # pylint: disable=broad-except
-        logger.error("Failed to save embeddings: %s", e)
-        return
+        # Generate and save embeddings
+        try:
+            parameters = embed_parameters(parameters_txt)
+            with open(parameters_json_path, "w", encoding='utf-8') as file:
+                json.dump(parameters, file, indent=4)
+            print(f"Successfully generated and saved {len(parameters)} embeddings to {parameters_json_path}")
+        except Exception as e: # pylint: disable=broad-except
+            print(f"Failed to generate and save embeddings: {e}")
+            return
 
     # Search for the closest parameters
     closest_parameters = search_parameters(query, parameters)
-    print("Closest parameters to the query:")
-    for param in closest_parameters:
-        print(param["parameter"])
+    print("Closest parameters:\n" + 60 * "-" + "\n" + "\n".join([param["parameter"] for param in closest_parameters]))
 
 if __name__ == '__main__':
     main()
