@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "description": "The robotic arm frequently overshoots its position when assembling small components, reducing accuracy.",
+        "category": "Technical problem",
+        "prediction": "Technical problem"
+    },
+    {
+        "id": "2",
+        "description": "The cooling system in the high-speed engine fails to prevent overheating during prolonged operation.",
+        "category": "Technical problem",
+        "prediction": "Technical problem"
+    },
+    {
+        "id": "3",
+        "description": "The drone\u2019s camera stabilizer produces blurry images in windy conditions, impacting video quality.",
+        "category": "Technical problem",
+        "prediction": "Technical problem"
+    },
+    {
+        "id": "4",
+        "description": "The packaging machine jams when handling biodegradable materials, causing frequent production stops.",
+        "category": "Technical problem",
+        "prediction": "Technical problem"
+    },
+    {
+        "id": "5",
+        "description": "The conveyor belt motor overheats when running at maximum speed for extended periods.",
+        "category": "Technical problem",
+        "prediction": "Technical problem"
+    },
+    {
+        "id": "6",
+        "description": "The hydraulic press achieves consistent force distribution across the entire surface of the workpiece.",
+        "category": "Other",
+        "prediction": "Other"
+    },
+    {
+        "id": "7",
+        "description": "The electric motor operates with 95% energy efficiency, reducing operational costs significantly.",
+        "category": "Other",
+        "prediction": "Other"
+    },
+    {
+        "id": "8",
+        "description": "The automated welding system ensures precision by adapting to minor variations in component alignment.",
+        "category": "Other",
+        "prediction": "Other"
+    },
+    {
+        "id": "9",
+        "description": "The HVAC system maintains a stable temperature range, improving energy efficiency in extreme weather.",
+        "category": "Other",
+        "prediction": "Other"
+    },
+    {
+        "id": "10",
+        "description": "The 3D printer produces high-resolution parts with complex geometries without requiring post-processing.",
+        "category": "Other",
+        "prediction": "Other"
+    }
+]

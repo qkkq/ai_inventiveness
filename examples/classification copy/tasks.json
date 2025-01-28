@@ -1,102 +1,82 @@
 [
     {
         "task": "Prepare a report on project progress",
-        "category": "work",
-        "prediction": "work"
+        "category": "work"
     },
     {
         "task": "Fix the leaky faucet in the bathroom",
-        "category": "home",
-        "prediction": "house"
+        "category": "home"
     },
     {
         "task": "Buy groceries for the week",
-        "category": "errands",
-        "prediction": "errands"
+        "category": "errands"
     },
     {
         "task": "Plan a family movie night",
-        "category": "general",
-        "prediction": "home"
+        "category": "general"
     },
     {
         "task": "Reply to client emails and schedule a follow-up meeting",
-        "category": "work",
-        "prediction": "general"
+        "category": "work"
     },
     {
         "task": "Clean out the garage and sort items for donation",
-        "category": "home",
-        "prediction": "errands"
+        "category": "home"
     },
     {
         "task": "Pick up a prescription from the pharmacy and drop off a package at the post office",
-        "category": "errands",
-        "prediction": "errands"
+        "category": "errands"
     },
     {
         "task": "Brainstorm ideas for a friend's birthday party",
-        "category": "general",
-        "prediction": "\"general\""
+        "category": "general"
     },
     {
         "task": "Update the company's website content and troubleshoot layout issues",
-        "category": "work",
-        "prediction": "\"work\""
+        "category": "work"
     },
     {
         "task": "Assemble new furniture and rearrange the living room",
-        "category": "home",
-        "prediction": "home"
+        "category": "home"
     },
     {
         "task": "Return a defective product to the store and exchange it",
-        "category": "errands",
-        "prediction": "home"
+        "category": "errands"
     },
     {
         "task": "Read a book on self-improvement or learn a new skill",
-        "category": "general",
-        "prediction": "general"
+        "category": "general"
     },
     {
         "task": "Prepare a presentation and conduct a team briefing on project milestones",
-        "category": "work",
-        "prediction": "work"
+        "category": "work"
     },
     {
         "task": "Organize a surprise anniversary celebration at home",
-        "category": "home",
-        "prediction": "home"
+        "category": "home"
     },
     {
         "task": "Drop off dry cleaning, pick up kids from school, and meet a friend for coffee",
-        "category": "errands",
-        "prediction": "errands"
+        "category": "errands"
     },
     {
         "task": "Research recipes and cook an elaborate meal for a special occasion",
-        "category": "general",
-        "prediction": "work"
+        "category": "general"
     },
     {
         "task": "Audit departmental processes and propose efficiency improvements",
-        "category": "work",
-        "prediction": "Based on the provided text, I will classify the task as follows:\n\n**Task Classification:** \"work\"\n\nMy reasoning is that the task involves auditing departmental processes, which implies a professional or work-related activity. The phrase \"Propose efficiency improvements\" further suggests that this task is related to workplace activities rather than personal errands or home chores. Therefore, I have classified it under the label \"work\"."
+        "category": "work"
     },
     {
         "task": "Plant a garden and repair the backyard fence",
-        "category": "home",
-        "prediction": "home \n\n(I had to re-generate as \"home\" was followed by extra text, as per rule) \n\n home"
+        "category": "home"
     },
     {
         "task": "Refuel the car, check tire pressure, and buy snacks for a road trip",
-        "category": "errands",
-        "prediction": "errands"
+        "category": "errands"
     },
     {
         "task": "Attend a community workshop or participate in a hobby class",
-        "category": "general",
-        "prediction": "home"
+        "category": "general"
     }
 ]

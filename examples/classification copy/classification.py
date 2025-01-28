@@ -70,14 +70,14 @@ def evaluate_predictions(tasks: list[dict]) -> dict:
     cm = confusion_matrix(y_true, y_pred)
 
     # Plot confusion matrix
-    plt.figure(figsize=(10,8))
-    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
-                xticklabels=['work', 'home', 'errands', 'general'],
-                yticklabels=['work', 'home', 'errands', 'general'])
-    plt.title('Confusion Matrix')
-    plt.xlabel('Predicted')
-    plt.ylabel('True')
-    plt.savefig(os.path.join(script_dir, "confusion_matrix.png"))
+    #plt.figure(figsize=(10,8))
+    #sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+    #            xticklabels=['work', 'home', 'errands', 'general'],
+    #            yticklabels=['work', 'home', 'errands', 'general'])
+    #plt.title('Confusion Matrix')
+    #plt.xlabel('Predicted')
+    #plt.ylabel('True')
+    #plt.savefig(os.path.join(script_dir, "confusion_matrix.png"))
 
     return {
         'accuracy': accuracy,
@@ -90,7 +90,7 @@ def evaluate_predictions(tasks: list[dict]) -> dict:
 # -----------------------------------------------------------------------------
 
 def main():
-    json_path = os.path.join(script_dir, "tasks.json")
+    json_path = os.path.join(script_dir, "classification_task.json")
     output_path = os.path.join(script_dir, "predictions.json")
 
     # Load tasks from JSON file
@@ -99,7 +99,7 @@ def main():
 
     # Classify tasks
     for task in tqdm(tasks, desc="Classifying tasks"):
-        label = get_response_from_ollama(task["task"])
+        label = get_response_from_ollama(task["description"])
         task["prediction"] = label
 
     # Save the results to a JSON file
