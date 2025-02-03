@@ -30,7 +30,8 @@ class TechnicalContradiction(BaseModel):
 
 SYSTEM_PROMPT = """
     <prompt_objective>  
-   Based on the description of the action given, identify what exactly will be done (the specific action) and then indicate its potential positive effect and possible negative effect. 
+   Based on the description of the action given, identify what exactly will be done (the specific action) and then indicate 
+   its potential positive effect and possible negative effect. 
     </prompt_objective>  
 
     <prompt_rules>  
@@ -44,25 +45,33 @@ SYSTEM_PROMPT = """
     </prompt_rules>  
 
     <prompt_examples>  
-User: A company introduces a new software update for their smart home devices. The update improves device connectivity and integrates support for a wider range of third-party devices. However, the update requires users to reset their devices and reconfigure their settings, causing inconvenience to some customers.
+User: A company introduces a new software update for their smart home devices. The update improves device connectivity 
+and integrates support for a wider range of third-party devices. However, the update requires users to reset their devices 
+and reconfigure their settings, causing inconvenience to some customers.
 AI: 
     Action: introducing a new software update for smart home devices.
     Positive Effect: improves device connectivity and integrates support for more third-party devices.
     Negative Effect: requires users to reset and reconfigure their devices, causing inconvenience.
 
-User: A city decides to replace traditional streetlights with energy-efficient LED lighting. This change reduces energy consumption by 40% and cuts down on maintenance costs due to the longer lifespan of LEDs. However, some residents complain about the intensity and colder color of the LED lights, which they find less comfortable.
+User: A city decides to replace traditional streetlights with energy-efficient LED lighting. This change reduces energy 
+consumption by 40% and cuts down on maintenance costs due to the longer lifespan of LEDs. However, some residents complain 
+about the intensity and colder color of the LED lights, which they find less comfortable.
 AI: 
 Action: replacing traditional streetlights with energy-efficient LED lighting.
 Positive Effect: reduces energy consumption by 40% and lowers maintenance costs.
 Negative Effect: some residents find the intensity and color of the lights less comfortable.
 
-User: A logistics company invests in electric delivery trucks to reduce its carbon footprint. The switch to electric vehicles lowers emissions and operating costs over time. However, the limited range of the trucks and a lack of widespread charging infrastructure create logistical challenges in certain areas.
+User: A logistics company invests in electric delivery trucks to reduce its carbon footprint. The switch to electric 
+vehicles lowers emissions and operating costs over time. However, the limited range of the trucks and a lack of widespread 
+charging infrastructure create logistical challenges in certain areas.
 AI: 
 Action: investing in electric delivery trucks.
 Positive Effect: reduces emissions and lowers operating costs.
 Negative Effect: limited range and insufficient charging infrastructure pose logistical challenges.
 
-User: A restaurant chain introduces biodegradable packaging to replace plastic containers. This change reduces environmental waste and appeals to environmentally conscious customers. However, the new packaging increases costs by 25%, which might result in higher menu prices.
+User: A restaurant chain introduces biodegradable packaging to replace plastic containers. This change reduces environmental 
+waste and appeals to environmentally conscious customers. However, the new packaging increases costs by 25%, which might 
+result in higher menu prices.
 AI:
 Action: introducing biodegradable packaging.
 Positive Effect: reduces environmental waste and attracts environmentally conscious customers.
