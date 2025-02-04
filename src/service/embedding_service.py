@@ -23,7 +23,7 @@ class EmbeddingService:
         self,
         query_vector: List[float],
         embeddings: List[List[float]],
-        n: int = 3
+        n: int = 1
         )-> list[str]:
         """
         Find the n closest sentences to the text.
