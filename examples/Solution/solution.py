@@ -1,0 +1,130 @@
+# pylint: disable=missing-module-docstring, missing-function-docstring, invalid-name
+import os
+import json
+from tqdm import tqdm
+from dotenv import load_dotenv
+from openai import OpenAI
+
+from sklearn.metrics import accuracy_score, precision_score, recall_score, confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
+import prompts.task_label
+
+from prompts.task_label import TaskLabelPrompt
+
+load_dotenv()
+
+# Resolve the path to the script directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# -----------------------------------------------------------------------------
+# Define clients
+# -----------------------------------------------------------------------------
+
+# OpenAI client
+openai_client = OpenAI()
+
+# Ollama client
+ollama_client = OpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="ollama"
+)
+
+# -----------------------------------------------------------------------------
+# Define prompts
+# -----------------------------------------------------------------------------
+
+task_label_prompt = TaskLabelPrompt()
+
+# -----------------------------------------------------------------------------
+# Define functions
+# -----------------------------------------------------------------------------
+
+
+def get_response_from_ollama(user_message: str) -> str:
+    response = ollama_client.chat.completions.create(
+        model="llama3.1:8b",
+        messages=task_label_prompt.compile_messages(user_message)
+    )
+    return response.choices[0].message.content
+
+def evaluate_predictions(tasks: list[dict]) -> dict:
+    """Evaluate model predictions using various metrics."""
+
+    # Extract true labels and predictions
+    y_true = [task['category'] for task in tasks]
+    y_pred = [task['prediction'] for task in tasks]
+
+    # Calculate metrics
+    accuracy = accuracy_score(y_true, y_pred)
+    precision = precision_score(y_true, y_pred, average='weighted')
+    recall = recall_score(y_true, y_pred, average='weighted')
+
+    # Create confusion matrix
+    cm = confusion_matrix(y_true, y_pred)
+
+    # Plot confusion matrix
+    #plt.figure(figsize=(10,8))
+    #sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+    #            xticklabels=['work', 'home', 'errands', 'general'],
+    #            yticklabels=['work', 'home', 'errands', 'general'])
+    #plt.title('Confusion Matrix')
+    #plt.xlabel('Predicted')
+    #plt.ylabel('True')
+    #plt.savefig(os.path.join(script_dir, "confusion_matrix.png"))
+
+    return {
+        'accuracy': accuracy,
+        'precision': precision,
+        'recall': recall,
+    }
+def remove_embedding_fields(parameters):
+    """
+    Remove the 'embedding' field from each parameter in the list.
+    """
+    for param in parameters:
+        param.pop("embedding", None)
+
+# -----------------------------------------------------------------------------
+# Main
+# -----------------------------------------------------------------------------
+
+def main():
+    json_path = os.path.join(script_dir, "tasks_with_embeddings_and_principles.json")
+    output_path = os.path.join(script_dir, "solution.json")
+
+    # Load tasks from JSON file
+    with open(json_path, "r", encoding="utf-8") as file:
+        tasks = json.load(file)
+
+    for task in tasks:
+        task.pop("closest_positive_parameters", None)
+        task.pop("closest_negative_parameters", None)
+        task.pop("negative", None)
+        task.pop("postive", None)
+        task.pop("action", None)
+        task.pop("label", None)
+    # Classify tasks
+    for task in tqdm(tasks, desc="Finding solutions"):
+        text = task["description"] + " " + " ".join(task["Principles"])
+        print(f"Description: {task['description']}")
+        print(f"Principles: {task['Principles']}")
+        print()
+        label = get_response_from_ollama(text)
+        task["prediction"] = label
+
+    # Save the results to a JSON file
+    print(f"Saving results to {output_path}")
+    with open(output_path, "w", encoding="utf-8") as file:
+        json.dump(tasks, file, indent=4)
+
+    # Evaluate the predictions
+   # metrics = evaluate_predictions(tasks)
+   # print(f"Saving evaluation metrics to {os.path.join(script_dir, 'metrics.json')}")
+   # print(f"Saving confusion matrix to {os.path.join(script_dir, 'confusion_matrix.png')}")
+    #print("-" * 80)
+    #print("Evaluation Metrics")
+    print("-" * 80)
+
+if __name__ == "__main__":
+    main()

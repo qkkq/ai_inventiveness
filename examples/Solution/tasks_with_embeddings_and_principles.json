@@ -1,0 +1,299 @@
+[
+    {
+        "id": "contra-00",
+        "description": "A car trailer manufacturer aims to increase the payload capacity of their flatbed trailers. By using high-strength steel in the frame construction, they have successfully increased the maximum load by 20%. The new design, while more capable, has resulted in a 15% increase in overall trailer weight. This additional weight reduces fuel efficiency for the towing vehicle and may require drivers to upgrade to more powerful tow vehicles for maximum capacity loads.",
+        "label": 1,
+        "action": "A car trailer manufacturer aims to increase the payload capacity of their flatbed trailers by using high-strength steel in the frame construction.",
+        "postive": "The new design, while more capable, has successfully increased the maximum load by 20%.",
+        "negative": "This additional weight reduces fuel efficiency for the towing vehicle and may require drivers to upgrade to more powerful tow vehicles for maximum capacity loads.",
+        "closest_positive_parameters": [
+            {
+                "uuid": "46208971-3e24-42ee-b4cf-15f4cd53db87",
+                "index": 20,
+                "parameter": "Power"
+            }
+        ],
+        "closest_negative_parameters": [
+            {
+                "uuid": "7fa151a9-a3f8-4b8c-8b57-abc874a550cc",
+                "index": 18,
+                "parameter": "Use of energy by moving object"
+            }
+        ],
+        "Principles": [
+            "Partial or excessive actions",
+            "Universality",
+            "Periodic action",
+            "Thermal expansion"
+        ]
+    },
+    {
+        "id": "contra-01",
+        "description": "Engineers developing a screw conveyor for transporting abrasive materials have implemented a hardened steel auger to improve wear resistance. The new design extends the operational lifespan of the conveyor by 40%. The hardened steel auger, being significantly heavier than its predecessor, requires more powerful motors to maintain the same rotational speed. This modification has led to a 25% increase in energy consumption during operation.",
+        "label": 1,
+        "action": "Engineers developing a screw conveyor for transporting abrasive materials have implemented a hardened steel auger",
+        "postive": "improves wear resistance and extends the operational lifespan of the conveyor by 40%",
+        "negative": "The hardened steel auger, being significantly heavier than its predecessor, requires more powerful motors and has led to a 25% increase in energy consumption during operation.",
+        "closest_positive_parameters": [
+            {
+                "uuid": "80777852-f0fb-45f9-b36a-35c35ba52fe0",
+                "index": 33,
+                "parameter": "Ease of repair"
+            }
+        ],
+        "closest_negative_parameters": [
+            {
+                "uuid": "7fa151a9-a3f8-4b8c-8b57-abc874a550cc",
+                "index": 18,
+                "parameter": "Use of energy by moving object"
+            }
+        ],
+        "Principles": [
+            "Dynamics",
+            "Segmentation",
+            "Mechanics substitution",
+            "Partial or excessive actions"
+        ]
+    },
+    {
+        "id": "contra-02",
+        "description": "A biogas compression system for a wastewater treatment plant has been redesigned to achieve higher throughput. The new compressor increases gas flow rate by 30%, allowing for more efficient energy production. The increased compression ratio generates more heat during operation, necessitating an expanded cooling system. This addition has increased the overall footprint of the compression unit by 20%, complicating its integration into existing plant layouts.",
+        "label": 1,
+        "action": "A biogas compression system for a wastewater treatment plant has been redesigned to achieve higher throughput.",
+        "postive": "increases gas flow rate by 30% allowing for more efficient energy production.",
+        "negative": "has increased the overall footprint of the compression unit by 20%, complicating its integration into existing plant layouts.",
+        "closest_positive_parameters": [
+            {
+                "uuid": "7fa151a9-a3f8-4b8c-8b57-abc874a550cc",
+                "index": 18,
+                "parameter": "Use of energy by moving object"
+            }
+        ],
+        "closest_negative_parameters": [
+            {
+                "uuid": "8ffbe5c3-b14c-4589-be5c-4d906f8d932b",
+                "index": 29,
+                "parameter": "External harm affects the object"
+            }
+        ],
+        "Principles": [
+            "Segmentation",
+            "Parameter changes",
+            "Universality",
+            "Cheap short-living objects"
+        ]
+    },
+    {
+        "id": "contra-03",
+        "description": "A cyclone separator for industrial dust collection has been modified to improve fine particle capture efficiency. By reducing the diameter of the cyclone body, engineers have increased the centrifugal force acting on particles, improving separation of particles down to 2.5 microns by 35%. The narrower design has resulted in a 25% increase in pressure drop across the separator, requiring more powerful fans and increasing energy consumption for the dust collection system.",
+        "label": 1,
+        "action": "modifying a cyclone separator to improve fine particle capture efficiency",
+        "postive": "improved separation of particles down to 2.5 microns by 35%",
+        "negative": "increased pressure drop across the separator, requiring more powerful fans and increasing energy consumption",
+        "closest_positive_parameters": [
+            {
+                "uuid": "514d7dc5-75e0-433d-aaf8-41cb5d719d0b",
+                "index": 25,
+                "parameter": "Quantity of substance/the matter"
+            }
+        ],
+        "closest_negative_parameters": [
+            {
+                "uuid": "67f8f448-922a-4066-8250-e2f7ac1535a0",
+                "index": 10,
+                "parameter": "Stress or pressure"
+            }
+        ],
+        "Principles": [
+            "Preliminary action",
+            "Phase transitions",
+            "Spheroidality - Curvature",
+            "Local quality"
+        ]
+    },
+    {
+        "id": "contra-04",
+        "description": "Structural engineers working on a lightweight bridge design have incorporated carbon fiber reinforced polymers (CFRP) into critical load-bearing elements. This modification has reduced the overall weight of the bridge structure by 30% while maintaining its load-carrying capacity. The use of CFRP materials has increased the material costs of the project by 45% and requires specialized equipment and expertise for installation and maintenance.",
+        "label": 1,
+        "action": "incorporating carbon fiber reinforced polymers (CFRP) into critical load-bearing elements in a bridge design",
+        "postive": "reduces the overall weight of the bridge structure by 30%",
+        "negative": "increases material costs by 45% and requires specialized equipment and expertise for installation and maintenance",
+        "closest_positive_parameters": [
+            {
+                "uuid": "9afd96a8-2a11-4615-b3c4-52dd55898c15",
+                "index": 0,
+                "parameter": "Weight of moving object"
+            }
+        ],
+        "closest_negative_parameters": [
+            {
+                "uuid": "71fe782a-d318-4cfd-87d4-faae2a968a76",
+                "index": 28,
+                "parameter": "Manufacturing precision"
+            }
+        ],
+        "Principles": [
+            "Mechanics substitution",
+            "Parameter changes",
+            "Copying",
+            "Mechanical vibration"
+        ]
+    },
+    {
+        "id": "contra-05",
+        "description": "A hydraulic drive system for heavy machinery has been upgraded to provide higher operating pressures, increasing the maximum force output by 25%. This enhancement allows the machinery to handle heavier loads and operate in more demanding conditions. The higher pressure system requires more robust seals and fittings, which have reduced the overall reliability of the hydraulic system, increasing maintenance frequency by 20% and potential downtime.",
+        "label": 1,
+        "action": "A hydraulic drive system for heavy machinery has been upgraded to provide higher operating pressures, increasing the maximum force output by 25%. This enhancement allows the machinery to handle heavier loads and operate in more demanding conditions.",
+        "postive": "This enhancement allows the machinery to handle heavier loads and operate in more demanding conditions.",
+        "negative": "The higher pressure system requires more robust seals and fittings, which have reduced the overall reliability of the hydraulic system, increasing maintenance frequency by 20% and potential downtime.",
+        "closest_positive_parameters": [
+            {
+                "uuid": "67f8f448-922a-4066-8250-e2f7ac1535a0",
+                "index": 10,
+                "parameter": "Stress or pressure"
+            }
+        ],
+        "closest_negative_parameters": [
+            {
+                "uuid": "67f8f448-922a-4066-8250-e2f7ac1535a0",
+                "index": 10,
+                "parameter": "Stress or pressure"
+            }
+        ],
+        "Principles": []
+    },
+    {
+        "id": "contra-06",
+        "description": "Robotics engineers have developed a new manipulator arm with an extended reach, increasing its workspace volume by 40%. The longer arm allows for greater flexibility in production line layouts and can access hard-to-reach areas in assembly processes. The extended reach has decreased the arm's precision at full extension, with positioning accuracy reduced by 0.5 mm at the maximum radius, potentially affecting the quality of high-precision tasks.",
+        "label": 1,
+        "action": "developed a new manipulator arm with an extended reach",
+        "postive": "increasing its workspace volume by 40%",
+        "negative": "Decreased the arm",
+        "closest_positive_parameters": [
+            {
+                "uuid": "a551199f-90d7-45b6-b548-f6c07688c478",
+                "index": 38,
+                "parameter": "Productivity"
+            }
+        ],
+        "closest_negative_parameters": [
+            {
+                "uuid": "41323642-5f92-4499-93ec-34af9e783aa2",
+                "index": 21,
+                "parameter": "Loss of Energy"
+            }
+        ],
+        "Principles": [
+            "Mechanics substitution",
+            "Preliminary action",
+            "Pneumatics and hydraulics",
+            "Parameter changes"
+        ]
+    },
+    {
+        "id": "contra-07",
+        "description": "A modular gas container system for LNG transport has been redesigned to increase its storage capacity. By optimizing the internal structure, engineers have increased the usable volume by 15% without changing the external dimensions. The new design incorporates thinner walls to maximize internal space, reducing the container's thermal insulation properties. This modification has increased the boil-off rate of the stored LNG by 8%, requiring more frequent refilling or additional cooling systems during extended storage periods.",
+        "label": 1,
+        "action": "redesigning a modular gas container system for LNG transport to increase its storage capacity",
+        "postive": "optimal internal structure increases usable volume by 15% without changing external dimensions",
+        "negative": "increased boil-off rate of the stored LNG by 8%, requiring more frequent refilling or additional cooling systems",
+        "closest_positive_parameters": [
+            {
+                "uuid": "5e8dbd02-db34-42d5-a51b-6b4df455fd36",
+                "index": 7,
+                "parameter": "Volume of stationary object"
+            }
+        ],
+        "closest_negative_parameters": [
+            {
+                "uuid": "269040de-a451-49f0-86d9-75ea2c693ee8",
+                "index": 19,
+                "parameter": "Use of energy by stationary object"
+            }
+        ],
+        "Principles": []
+    },
+    {
+        "id": "contra-08",
+        "description": "A car trailer manufacturer has introduced a new lightweight composite material for the trailer bed, reducing the overall weight by 25%. This weight reduction improves fuel efficiency and increases the payload capacity. The composite material, while durable, is more susceptible to UV degradation than traditional steel, reducing the expected lifespan of the trailer bed by 20% without additional protective coatings.",
+        "label": 1,
+        "action": "introducing a new lightweight composite material for the trailer bed",
+        "postive": "improves fuel efficiency and increases payload capacity",
+        "negative": "the composite material is more susceptible to UV degradation, reducing the expected lifespan of the trailer bed by 20%",
+        "closest_positive_parameters": [
+            {
+                "uuid": "7fa151a9-a3f8-4b8c-8b57-abc874a550cc",
+                "index": 18,
+                "parameter": "Use of energy by moving object"
+            }
+        ],
+        "closest_negative_parameters": [
+            {
+                "uuid": "8ffbe5c3-b14c-4589-be5c-4d906f8d932b",
+                "index": 29,
+                "parameter": "External harm affects the object"
+            }
+        ],
+        "Principles": [
+            "Segmentation",
+            "Parameter changes",
+            "Universality",
+            "Cheap short-living objects"
+        ]
+    },
+    {
+        "id": "contra-09",
+        "description": "Engineers have redesigned a screw conveyor for the food industry, incorporating a polished stainless steel auger to improve hygiene and reduce product adhesion. The new design has decreased cleaning time between batches by 40% and reduced product waste by 15%. The smoother surface of the auger has led to a 10% decrease in conveying efficiency, requiring longer operation times to transport the same volume of material.",
+        "label": 1,
+        "action": "redesigning a screw conveyor for the food industry and incorporating a polished stainless steel auger",
+        "postive": "decreased cleaning time between batches by 40% and reduced product waste by 15%",
+        "negative": "reduced product handling efficiency by 10%",
+        "closest_positive_parameters": [
+            {
+                "uuid": "a551199f-90d7-45b6-b548-f6c07688c478",
+                "index": 38,
+                "parameter": "Productivity"
+            }
+        ],
+        "closest_negative_parameters": [
+            {
+                "uuid": "d5f8a815-4651-45bf-9e1e-2769de48c74d",
+                "index": 22,
+                "parameter": "Loss of substance"
+            }
+        ],
+        "Principles": [
+            "Mechanics substitution",
+            "Preliminary action",
+            "Parameter changes",
+            "Feedback"
+        ]
+    },
+    {
+        "id": "contra-10",
+        "description": "A biogas compression system has been modified to operate at lower temperatures, reducing the risk of gas ignition and improving safety. The new system cools the gas before compression, lowering the operating temperature by 30\u00b0C. This modification has increased the moisture content in the compressed gas by 25%, necessitating the addition of a dehumidification system that increases energy consumption and maintenance requirements.",
+        "label": 1,
+        "action": "modifying biogas compression system to operate at lower temperatures",
+        "postive": "reduces risk of gas ignition, improves safety, lowers operating temperature by 30\u00b0c",
+        "negative": "increases moisture content in compressed gas by 25% and necessitates the addition of a dehumidification system",
+        "closest_positive_parameters": [
+            {
+                "uuid": "ad5d7005-75fe-421c-9863-4c49e06dbad1",
+                "index": 32,
+                "parameter": "Ease of operation"
+            }
+        ],
+        "closest_negative_parameters": [
+            {
+                "uuid": "67f8f448-922a-4066-8250-e2f7ac1535a0",
+                "index": 10,
+                "parameter": "Stress or pressure"
+            }
+        ],
+        "Principles": [
+            "Taking out",
+            "Color changes",
+            "Equipotentiality"
+        ]
+    }
+]
